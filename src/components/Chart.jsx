@@ -12,7 +12,7 @@ const Chart = () => {
     const januaryExpense = data.filter(item => item.date.month == 7);
     const labels = januaryExpense.map(item => item.expense);
     const prices = januaryExpense.map(item => item.price);
-    console.log(januaryExpense, labels, prices)
+    // console.log(januaryExpense, labels, prices)
 
     return (
         <div className='w-full h-full p-2'>

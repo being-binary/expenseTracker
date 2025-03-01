@@ -4,6 +4,7 @@ import { GiHamburger } from "react-icons/gi";
 import { RiMore2Fill } from "react-icons/ri";
 import { GiWallet } from "react-icons/gi";
 import DailyContext from '../context/DailyContext';
+import AddDailyExp from './AddDailyExp';
 const DailyExpense = () => {
 	const [display, setDisplay] = useState({});
 	const ctx = useContext(DailyContext);
@@ -13,7 +14,7 @@ const DailyExpense = () => {
 			[id]: !prev[id],
 		}));
 	}
-	console.log(ctx)
+	// console.log(ctx)
 	return (
 		<div className='rounded-lg flex flex-col box-border justify-evenly shadow-xl'>
 			<div className='rounded-lg bg-yellow-200 h-[12%] m-2 flex justify-center items-center capitalize font-semibold text-xl'><CiCalendarDate className='text-3xl' />&nbsp;&nbsp;your transaction history</div>
@@ -45,13 +46,13 @@ const DailyExpense = () => {
 				}
 
 			</div>
-			<button className='h-15 ring-3 ring-green-600 rounded-lg m-2 cursor-pointer flex flex-row items-center justify-center'>
+			<picture className='h-15 ring-3 ring-green-600 rounded-lg m-2 flex flex-row items-center justify-center'>
 				<GiWallet className='text-2xl text-green-900 inset-shadow-xl' />&nbsp;&nbsp;
 				<p className='text-xl font-semibold font-sanserif text-green-900 inset-shadow-xl'>Missing&nbsp;Transaction?</p>
 				&nbsp;&nbsp;
 				&nbsp;&nbsp;
-				<p className='text-lg font-semibold text-white uppercase px-3 py-2 bg-green-500 rounded-lg'>add&nbsp;now</p>
-			</button>
+				<AddDailyExp/>
+			</picture>
 		</div>
 	)
 }
